@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block title %}{% endblock title %}
+    <link href="https://fonts.googleapis.com/css?family=Mukta:300,400,500,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/vendors/@fortawesome/fontawesome-free/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/live-resume.css' %}">
+</head>
+
+<body>
+    <header>
+        <button class="btn btn-white btn-share ml-auto mr-3 ml-md-0 mr-md-auto"><img src="{% static 'assets/images/share.svg' %}" alt="share" class="btn-img">
+            SHARE</button>
+        <nav class="collapsible-nav" id="collapsible-nav">
+            <a href="{% url 'home' %}" class="nav-link active">HOME</a>
+            <a href="{% url 'resume' %}" class="nav-link">RESUME</a>
+        </nav>
+        <button class="btn btn-menu-toggle btn-white rounded-circle" data-toggle="collapsible-nav"
+            data-target="collapsible-nav"><img src="{% static 'assets/images/hamburger.svg' %}" alt="hamburger"></button>
+    </header>
+    <div class="content-wrapper">
+        <aside>
+            <div class="profile-img-wrapper">
+                <img src="{% static 'image\photo_2023-10-03_22-58-34.jpg' %}" alt="profile">
+            </div>
+            <h1 class="profile-name">Muminjanov Akbar</h1>
+            <div class="text-center">
+                <span class="badge badge-white badge-pill profile-designation">Backend web developer</span>
+            </div>
+            <nav class="social-links">
+                <a href="#!" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="#!" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="https://t.me/Priler_04" class="social-link"><i class="fab fa-telegram"></i></a>
+                <a href="#!" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/akbarmuminjanov" class="social-link"><i class="fab fa-github"></i></a>
+            </nav>
+            <div class="widget">
+                <h5 class="widget-title">personal information</h5>
+                <div class="widget-content">
+                    <p>BIRTHDAY : 23 June 2008</p>
+                    <p>PHONE : +998 91 123 68 69</p>
+                    <p>MAIL : muminjanov.75@.com</p>
+                    <p>Location : Fergana, Uzbekistan</p>
+                    <button class="btn btn-download-cv btn-primary rounded-pill"> <img src="{% static 'assets/images/download.svg' %}" alt="download"
+                        class="btn-img">DOWNLOAD CV </button>
+                </div>
+            </div>
+            <div class="widget card">
+                <div class="card-body">
+                    <div class="widget-content">
+                        <h5 class="widget-title card-title">LANGUAGES</h5>
+                        <p>Uzbek : native</p>
+                        <p>Russian : fluent</p>
+                        <p>English : fluent</p>
+                    </div>
+                </div>
+            </div>
+            <div class="widget card">
+                <div class="card-body">
+                    <div class="widget-content">
+                        <h5 class="widget-title card-title">INTERESTS</h5>
+                        <p>Programming</p>
+                        <p>Swimming</p>
+                        <p>Business</p>
+                        <p>Finance</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        {% block content %}
+          
+        {% endblock content %}
+
+        <footer>Live Resume @ <a href="https://www.bootstrapdash.com" target="_blank" rel="noopener noreferrer">BootstrapDash</a>. All Rights Reserved 2020</footer>
+    </main>
+</div>
+<script src="{% static 'assets/vendors/jquery/dist/jquery.min.js' %}"></script>
+<script src="{% static 'assets/vendors/@popperjs/core/dist/umd/popper-base.min.js' %}"></script>
+<script src="{% static 'assets/vendors/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/js/live-resume.js' %}"></script>
+</body>
+
+</html>

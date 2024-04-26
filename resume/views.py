@@ -1,12 +1,14 @@
 from django.shortcuts import render
-from django.views import View
+
+from .models import Resume
 
 # Create your views here.
-class Home(View):
-    def get(self, request):
-        return render(request, "index.html")
+def base(request):
+    resume = Resume.objects.all()
+    return render(request, "base.html", {"resume":resume})
 
+def index(request):
+    return render(request, "index.html")
 
-class Resume(View):
-    def get(self, request):
-        return render(request, "resume.html")
+def resume(request):
+    return render(request, "resume.html")

@@ -53,7 +53,7 @@
                     <p>MAIL : {{ resume.mail }}</p>
                     <p>Location : {{ resume.location }}</p>
                     <button 
-                     class="btn btn-download-cv btn-primary rounded-pill"> <img src="{% static 'assets/images/download.svg' %}" alt="download"
+                    id="downloadButton" class="btn btn-download-cv btn-primary rounded-pill"> <img src="{% static 'assets/images/download.svg' %}" alt="download"
                         class="btn-img">DOWNLOAD CV </button>
                 </div>
             </div>
@@ -111,11 +111,33 @@
 
             <footer>Live Resume @ <a href="https://www.bootstrapdash.com" target="_blank" rel="noopener noreferrer">BootstrapDash</a>. All Rights Reserved 2020</footer>
         </main>
+        <script>
+            document.getElementById("downloadButton").onclick = function() {
+                // Создаем ссылку для загрузки файла
+                var downloadLink = document.createElement("a");
+                downloadLink.href = "media\file"; // Укажите путь к файлу для скачивания
+                downloadLink.download = "{{ resume.resume_file }}"; // Укажите имя файла, которое будет отображаться при загрузке
+                document.body.appendChild(downloadLink);
+                downloadLink.click(); // Вызываем нажатие на ссылку
+                document.body.removeChild(downloadLink); // Удаляем ссылку после загрузки файла
+            };
+        </script>
+        <script>
+            $(document).ready(function() {
+                // Получаем текущий путь страницы
+                var currentPath = window.location.pathname;
+        
+                // Находим ссылку в навбаре, соответствующую текущему пути
+                $('.navbar-nav a[href="' + currentPath + '"]').addClass('active');
+            });
+        </script>
+        
     </div>
     <script src="{% static 'assets/vendors/jquery/dist/jquery.min.js' %}"></script>
     <script src="{% static 'assets/vendors/@popperjs/core/dist/umd/popper-base.min.js' %}"></script>
     <script src="{% static 'assets/vendors/bootstrap/dist/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'assets/js/live-resume.js' %}"></script>
+    
 </body>
 
 </html>

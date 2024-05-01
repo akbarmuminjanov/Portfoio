@@ -122,15 +122,6 @@
                 document.body.removeChild(downloadLink); // Удаляем ссылку после загрузки файла
             };
         </script>
-        <script>
-            $(document).ready(function() {
-                // Получаем текущий путь страницы
-                var currentPath = window.location.pathname;
-        
-                // Находим ссылку в навбаре, соответствующую текущему пути
-                $('.navbar-nav a[href="' + currentPath + '"]').addClass('active');
-            });
-        </script>
         
     </div>
     <script src="{% static 'assets/vendors/jquery/dist/jquery.min.js' %}"></script>

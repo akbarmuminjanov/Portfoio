@@ -6,7 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Live Resume :: Home</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="{% static 'AdminLTELogo.png' %}" />
+    <link rel="icon" type="image/png" sizes="192x192" href="{% static '136732682.png' %}" />
+    <title>Live Resume : Home</title>
     <link href="https://fonts.googleapis.com/css?family=Mukta:300,400,500,600,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'assets/vendors/@fortawesome/fontawesome-free/css/all.min.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/live-resume.css' %}">
@@ -89,13 +91,9 @@
         {% endblock content %}
         <main>
             <section class="intro-section">
-                <h2 class="section-title">Hello, Daisy Murphy!</h2>
-                <h5>I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print
-                    media. I enjoy turning complex problems into simple, beautiful and intuitive designs. My job is to
-                    build your website so that it is functional and user-friendly but at the same time attractive.
-                    Moreover, I add personal touch to your product and make sure that is eye-catching and easy to use.
-                    My aim is to bring across your message and identity in the most creative way. I created web design
-                    for many famous brand companies.</h5>
+                <h2 class="section-title">Hello, {{ resume.full_name }}!</h2>
+                <h5>Hello, I'm Akbarjon, a passionate programmer and tech enthusiast. I specialize in crafting exceptional digital experiences through website development, creating dynamic Telegram bots, and designing automated programs—all powered by my expertise in Python and Django.</h5>
+                <h5>Aside from my technical prowess, I'm also dedicated to mastering English, expanding my horizons to collaborate on global projects. My journey in programming is a continuous exploration of innovation and creativity, and I'm always excited to embark on new challenges. That's just a glimpse into who I am and what I do—stay tuned for more!</h5>
             </section>
             
             <section>

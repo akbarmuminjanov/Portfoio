@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="apple-touch-icon" sizes="57x57" href="{% static 'AdminLTELogo.png' %}" />
-    <link rel="icon" type="image/png" sizes="192x192" href="{% static '136732682.png' %}" />
     <title>Live Resume : Home</title>
     <link href="https://fonts.googleapis.com/css?family=Mukta:300,400,500,600,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'assets/vendors/@fortawesome/fontawesome-free/css/all.min.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/live-resume.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
     
 </head>
 
@@ -20,13 +20,14 @@
     <header>
         <button class="btn btn-white btn-share ml-auto mr-3 ml-md-0 mr-md-auto"><img src="{% static 'assets/images/share.svg' %}" alt="share" class="btn-img">
             SHARE</button>
+        {% block navbar %}
         <nav class="collapsible-nav" id="collapsible-nav">
             <a href="{% url 'home' %}" class="nav-link active">HOME</a>
             <a href="{% url 'resume' %}" class="nav-link">RESUME</a>
-            <a href="portfolio.html" class="nav-link">PORTFOLIO</a>
-            <a href="blog.html" class="nav-link">BLOG</a>
-            <a href="contact.html" class="nav-link">CONTACT</a>
-        </nav>
+            <a href="{% url 'portfolio' %}" class="nav-link">PORTFOLIO</a>
+            <a href="{% url 'blog' %}" class="nav-link">BLOG</a>
+           </nav>
+        {% endblock navbar %}
         <button class="btn btn-menu-toggle btn-white rounded-circle" data-toggle="collapsible-nav"
             data-target="collapsible-nav"><img src="{% static 'assets/images/hamburger.svg' %}" alt="hamburger"></button>
     </header>
@@ -89,6 +90,7 @@
         {% block content %}
           
         {% endblock content %}
+        {% block aboutme %}
         <main>
             <section class="intro-section">
                 <h2 class="section-title">Hello, {{ resume.full_name }}!</h2>
@@ -109,6 +111,7 @@
 
             <footer>Live Resume @ <a href="https://www.bootstrapdash.com" target="_blank" rel="noopener noreferrer">BootstrapDash</a>. All Rights Reserved 2020</footer>
         </main>
+        {% endblock aboutme %}
         <script>
             document.getElementById("downloadButton").onclick = function() {
                 // Создаем ссылку для загрузки файла
@@ -126,6 +129,7 @@
     <script src="{% static 'assets/vendors/@popperjs/core/dist/umd/popper-base.min.js' %}"></script>
     <script src="{% static 'assets/vendors/bootstrap/dist/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'assets/js/live-resume.js' %}"></script>
+    <script src="{% static 'assets/vendors/entry/jq.entry.min.js' %}"></script>
     
 </body>
 
